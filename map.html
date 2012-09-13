@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript" src="jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBOxk6pVx1pUL3mcKDjFQJJtZW_mam7Rr4&sensor=false&libraries=visualization">
+    </script>
+    <script type="text/javascript" src="map.js"></script>
+    <script type="text/javascript">
+    </script>
+  </head>
+  <body>
+    <div id="stats">
+      <table>
+        <tr>
+          <th>Total</th>
+          <td id="stats-total"></td>
+          <th>Processed</th>
+          <td id="stats-processed"></td>
+          <th>Visible</th>
+          <td id="stats-visible"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+  </body>
+</html>
