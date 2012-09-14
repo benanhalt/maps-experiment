@@ -1,9 +1,15 @@
 function QuadTree(boundary) {
     this.boundary = boundary;
     this.points = [];
+    // var rect = new google.maps.Rectangle();
+    // rect.setOptions({
+    //     map: window.map,
+    //     bounds: this.boundary,
+    //     fillOpacity: 0.0
+    // });
 }
 
-QuadTree.POINTS_PER_NODE = 10;
+QuadTree.POINTS_PER_NODE = 100;
 
 _.extend(QuadTree.prototype, {
     insert: function(point) {
@@ -20,8 +26,8 @@ _.extend(QuadTree.prototype, {
         return false;
     },
     subdivide: function() {
-        var ne = this.bounds.getNorthEast();
-        var sw = this.bounds.getSouthWest();
+        var ne = this.boundary.getNorthEast();
+        var sw = this.boundary.getSouthWest();
 
         var mlat = (sw.lat() + ne.lat())/2;
         var mlng = (sw.lng() + ne.lng())/2;
@@ -49,6 +55,6 @@ _.extend(QuadTree.prototype, {
 QuadTree.global = function() {
     return new QuadTree(
         new google.maps.LatLngBounds(
-            new google.maps.LatLng(-90, 90),
-            new google.maps.LatLng(-180, 180)));
+            new google.maps.LatLng(-89.99, -179.99),
+            new google.maps.LatLng(89.99, 179.99)))
 };
